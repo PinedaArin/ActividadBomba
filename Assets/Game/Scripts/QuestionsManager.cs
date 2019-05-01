@@ -27,6 +27,8 @@ public class QuestionsManager : MonoBehaviour
     [Header("Sound Effects")]
     public AudioClip sfxBombBeep;
     public AudioClip sfxBombBoom;
+    public AudioClip sfxCongratulations;
+
 
     [SerializeField]
     private UserQuestion currentQuestion;
@@ -149,6 +151,10 @@ public class QuestionsManager : MonoBehaviour
             GameManager.Instance.cameraVFX.SetActive(true);
             Vector3 cameraPosition = Camera.main.transform.position;
             AudioSource.PlayClipAtPoint(sfxBombBoom, cameraPosition);
+        }else
+        {
+            Vector3 cameraPosition = Camera.main.transform.position;
+            AudioSource.PlayClipAtPoint(sfxCongratulations, cameraPosition);
         }
         yield return new WaitForSeconds(3);
         NavigatetoNextScreen(answer);

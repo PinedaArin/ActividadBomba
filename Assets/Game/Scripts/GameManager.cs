@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S) && bCanAdvanceScreen)
+        if(Input.GetKeyDown(KeyCode.PageDown) && bCanAdvanceScreen)
         {
             switch (currentState)
             {
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
                     currentState = GameState.Database;
                     break;
                 case GameState.Database:
-                                      
+                    Submit();           
                     break;
                 case GameState.GameInstructions:
                     ToPlay();
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.PageDown))
+        if(Input.GetKeyDown(KeyCode.PageUp))
         {
             ResetGame();
         }
