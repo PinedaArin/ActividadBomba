@@ -56,8 +56,7 @@ public class GameManager : MonoBehaviour
                     Submit();           
                     break;
                 case GameState.GameInstructions:
-                    ToPlay();
-                    currentState = GameState.Questions;
+                   
                     break;
 
                 case GameState.Questions:
@@ -73,6 +72,22 @@ public class GameManager : MonoBehaviour
         {
             ResetGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (currentState == GameState.GameInstructions)
+            {
+                if (bCanAdvanceScreen == false)
+                    return;
+                bCanAdvanceScreen = false;
+                Invoke("AllowAdvanceScreen", 3.0f);
+                    ToPlay();
+                    currentState = GameState.Questions;
+                
+                 
+            }
+        }
+
     }
 
     public void ShowLegals ()
@@ -127,7 +142,7 @@ public class GameManager : MonoBehaviour
         Invoke("AllowAdvanceScreen", 3.0f);
         Questions.OpenCloseObjectAnimation();
         congratulations.OpenCloseObjectAnimation();
-        Invoke("ResetGame", 5);
+        Invoke("ResetGame", 15);
     }
     public void YourLose()
     {

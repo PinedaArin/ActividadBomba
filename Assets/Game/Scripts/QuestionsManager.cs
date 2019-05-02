@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class QuestionsManager : MonoBehaviour
 {
-    public int PlayTime = 15;
+    public static int PlayTime = 30;
 
     [Header("Questions Database")]
     public List<UserQuestion> questions = new List<UserQuestion>();
