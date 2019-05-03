@@ -2001,10 +2001,7 @@ MonoBehaviour:
     answerD: "An\xE1lisis de vulnerabilidades, Fuga de Informaci\xF3n (DLP), Antivirus,
       Comunicaciones Unificadas, Antiransomware, Seguridad M\xF3viles, concientizaci\xF3n,
       Firewall nueva generaci\xF3n, Seguridad Cloud, SIEM, SandBox, SOC, WAF"
-    correctAnswer: "Fuga de Informaci\xF3n (DLP), Antivirus, Antiransomware, Seguridad
-      M\xF3viles, concientizaci\xF3n, Firewall nueva generaci\xF3n, Seguridad Cloud,
-      SIEM, SandBox, SOC, WAF. M\xF3viles, concientizaci\xF3n, Firewall nueva generaci\xF3n,
-      Seguridad Cloud, SIEM, SandBox, SOC, WAF"
+    correctAnswer: B
   - question: "Qu\xE9 hace diferente nuestra soluci\xF3n de Seguridad Gestionada de
       las ofertas t\xEDpicas del mercado"
     answerA: 'Seguridad sincronizada '
@@ -4036,6 +4033,9 @@ MonoBehaviour:
   congratulations: {fileID: 1433762907}
   yourLose: {fileID: 1970648122}
   cameraVFX: {fileID: 927789701}
+  fireworksVFX: {fileID: 8164124180777236305, guid: 5a60462530c73fc4ab7a2b0985fbaf9e,
+    type: 3}
+  bgmWinMusic: {fileID: 8300000, guid: debf555fdbcaadf4e8b79f7450baa370, type: 3}
 --- !u!4 &1249252025
 Transform:
   m_ObjectHideFlags: 0

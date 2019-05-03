@@ -153,6 +153,7 @@ public class QuestionsManager : MonoBehaviour
             AudioSource.PlayClipAtPoint(sfxBombBoom, cameraPosition);
         }else
         {
+            GameManager.Instance.CongratulationsSequence();
             Vector3 cameraPosition = Camera.main.transform.position;
             AudioSource.PlayClipAtPoint(sfxCongratulations, cameraPosition);
         }

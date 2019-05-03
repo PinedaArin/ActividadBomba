@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     [Header("VFX")]
     public GameObject cameraVFX;
+    public GameObject fireworksVFX;
+
+    public AudioClip bgmWinMusic;
 
     public static GameManager Instance;
 
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         currentState = GameState.MainScreen;
 
         cameraVFX.SetActive(false);
@@ -164,6 +168,30 @@ public class GameManager : MonoBehaviour
     private void AllowAdvanceScreen ()
     {
         bCanAdvanceScreen = true;
+    }
+
+    public void CongratulationsSequence ()
+    {
+        StartCoroutine(SpawnFireworks());
+        Vector3 cameraPosition = Camera.main.transform.position;
+        AudioSource.PlayClipAtPoint(bgmWinMusic, cameraPosition);
+    }
+
+    IEnumerator SpawnFireworks ()
+    {
+        while(true)
+        {
+            SpawnRandomFireworksVFX();
+            yield return new WaitForSeconds(1.5f);
+
+        }
+    }
+
+    public void SpawnRandomFireworksVFX()
+    {
+       
+        Vector3 screenPosition = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), 0));
+        Instantiate(fireworksVFX, screenPosition, Quaternion.identity);
     }
 }
 
